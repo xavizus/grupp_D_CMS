@@ -25,4 +25,5 @@ node_modules/
 *.sqlite
 
 # Dont ignore
-README.md
+!README.md
+!test-code
