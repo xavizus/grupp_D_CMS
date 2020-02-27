@@ -98,16 +98,8 @@ function your_prefix_get_meta_box( $meta_boxes ) {
 				'name' => esc_html__( 'Bostadstyp', 'Real-Estate' ),
 				'desc' => esc_html__( 'Välj bostadstyp', 'Real-Estate' ),
 				'taxonomy' => 'propertytype',
-				'field_type' => 'select',
-			),
-			array(
-				'id' => $prefix . 'properties',
-				'type' => 'taxonomy',
-				'name' => esc_html__( 'Egenskaper', 'Real-Estate' ),
-				'desc' => esc_html__( 'Egenskaper för fastigheten', 'Real-Estate' ),
-				'taxonomy' => 'properties',
-				'field_type' => 'select',
-			),
+				'field_type' => 'select_advanced',
+			)
 		),
 	);
 
