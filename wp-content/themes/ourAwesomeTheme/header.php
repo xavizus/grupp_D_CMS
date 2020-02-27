@@ -70,6 +70,12 @@
             'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
             'walker'            => new WP_Bootstrap_Navwalker(),
 		) );
+			if ( is_active_sidebar( 'bs-example-navbar-collapse-1' ) ) : ?>
+			<div id="header-widget-area" class="chw-widget-area widget-area" role="complementary">
+			<?php dynamic_sidebar( 'bs-example-navbar-collapse-1' ); ?>
+			</div>
+			 
+			<?php endif; ?>
 			?>
 				</div>
 			</nav>
