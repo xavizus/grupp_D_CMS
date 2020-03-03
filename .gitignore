@@ -11,7 +11,6 @@ wp-content/*
 
 # ignore these plugins
 wp-content/plugins/*
-!wp-content/plugins/ourAwesomePlugin
 !wp-content/plugins/user-role-editor
 !wp-content/plugins/custom-post-type-ui
 !wp-content/plugins/meta-box
