@@ -12,6 +12,7 @@ wp-content/*
 # ignore these plugins
 wp-content/plugins/*
 !wp-content/plugins/ourAwesomePlugin
+!wp-content/plugins/user-role-editor
 
 # ignore specific themes
 wp-content/themes/*
