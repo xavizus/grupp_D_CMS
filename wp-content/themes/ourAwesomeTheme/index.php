@@ -31,6 +31,7 @@ get_header();
 
 			/* Start the Loop */
 			while ( have_posts() ) :
+				echo print_r(get_post_type());
 				the_post();
 
 				/*
