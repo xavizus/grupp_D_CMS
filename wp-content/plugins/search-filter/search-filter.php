@@ -546,7 +546,7 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 
 			//grab search term for prefilling search input
 			if(isset($wp_query->query['s']))
-			{//!"£$%^&*()
+			{//!"ï¿½$%^&*()
 				$this->searchterm = trim(get_search_query());
 			}
 
@@ -917,6 +917,14 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 					}
 					$this->urlparams .= "s=".urlencode($this->searchterm);
 					$this->hassearchquery = true;
+				} else {
+					if(!$this->hasqmark)
+					{
+						$this->urlparams .= "?";
+						$this->hasqmark = true;
+					}
+					$this->urlparams .= "s=";
+
 				}
 			}
 			if(!$this->hassearchquery)
