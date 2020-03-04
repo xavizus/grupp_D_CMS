@@ -40,15 +40,23 @@ $metaData = array(
         <!-- if home header: -->
         <?php else : ?>
 
-        <?php endif; ?>
+
+
+		<?php endif;
+		     foreach ($metaData as $data) {
+				$key = $data;
+				$$key = get_post_meta(get_the_ID(), $data,true);
+			}
+		?>
         <!-- end if home header -->
 	</header><!-- .entry-header -->
 
-	<?php ourawesometheme_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php
-        if (!is_home()) :
+		if (!is_home()) :
+			
+	ourawesometheme_post_thumbnail();
+
 		the_content( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
@@ -62,10 +70,7 @@ $metaData = array(
 			get_the_title()
         ) );
         
-        foreach ($metaData as $data) {
-            $key = $data;
-            $$key = get_post_meta(get_the_ID(), $data,true);
-        }
+   
 
         echo "Rummet är " . $kvm . " kvm stort <br>";
         echo "Fastigheten finns på adressen: $address <br>";
@@ -79,6 +84,34 @@ $metaData = array(
 
         <!-- is home content -->
         <?php else:?>
+  <div class="row justify-content-between d-flex">
+ 
+    <?php $featured_img_url=get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>
+    <div class="col-lg-4">
+      <div class="card mb-2">
+        <img class="card-img-top" src="<?php echo $featured_img_url ?>" alt="">
+        <div class="card-body">
+          <h4 class="card-title"><?php the_title(); ?></h4>
+		  <p class="card-text"></p>
+		  <p class="card-text"><?=$address?></p>
+		  <p class="card-text"><?=$zipcode?></p>
+		  <p class="card-text"><?=$city?></p>
+		  <p class="card-text"><?=$showdate?></p>
+		  <p class="card-text"><?=$noofrooms?></p>
+		  <p class="card-text"><?=$kvm?></p>
+		  <p class="card-text"><?=$initialbid?></p>
+	
+
+);
+
+          <a href="#" class="solid-btn">View</a>
+        </div>
+      </div>
+   
+  
+   
+  </div>
+</div> <!-- .container -->
 
         <?php
         endif;
