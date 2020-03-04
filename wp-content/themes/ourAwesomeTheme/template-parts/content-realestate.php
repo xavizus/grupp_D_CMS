@@ -85,7 +85,7 @@ else:
 ?>
 
         <?php $featured_img_url=get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>
-        <div class="card mb-2">
+        <div class="card">
             <img class="card-img-top" src="<?php echo $featured_img_url ?>" alt="">
             <div class="card-body">
                 <h4 class="card-title"><?php the_title(); ?></h4>

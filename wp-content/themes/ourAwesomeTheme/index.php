@@ -16,7 +16,7 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main container">
+		<main id="main" class="site-main">
 
 		<?php
 		if ( have_posts() ) :
@@ -30,7 +30,7 @@ get_header();
 			endif;
 			if (is_home()) :
 				?>
-				<div class="row d-flex">
+				<div class="card-deck">
 				<?php
 			endif;
 
