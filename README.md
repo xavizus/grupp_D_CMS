@@ -12,7 +12,7 @@ Bygga en mäklarsite i WP.
 - [x] En author ska kunna lägga till och redigera egna objekt men inte publicera dem.
 - [x] En editor ska kunna lägga till, redigera och publicera/avpublicera egna och andras objekt.
 - [x] Administratörer ska kunna ta bort objekt.
-- [ ] På förstasidan ska ett visst antal utvalda objekt visas på ett säljande och tillgängligt sätt.
+- [x] På förstasidan ska ett visst antal utvalda objekt visas på ett säljande och tillgängligt sätt.
 - [ ] I menyn ska det finnas möjlighet att välja olika kategorier, t ex bostadsrätt. Länken ska gå till en sida som presenterar ett utvalt objekt överst och sedan listar övriga objekt.
 - [ ] Både förstasidan och kategorisidorna ska paginera resultatet och visa max fem objekt i taget.
 - [ ] Det måste finnas tillräckligt många objekt för att visa att ni har löst pagineringsuppgiften.

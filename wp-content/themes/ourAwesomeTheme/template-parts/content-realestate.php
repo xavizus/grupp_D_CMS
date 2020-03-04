@@ -24,7 +24,7 @@ foreach ($metaData as $data) {
 }
 
 
-if (!is_home()) :?>
+if (!is_front_page()) :?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
