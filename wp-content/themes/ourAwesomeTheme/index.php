@@ -28,10 +28,14 @@ get_header();
 				</header>
 				<?php
 			endif;
+			if (is_home()) :
+				?>
+				<div class="row d-flex">
+				<?php
+			endif;
 
 			/* Start the Loop */
 			while ( have_posts() ) :
-				echo print_r(get_post_type());
 				the_post();
 
 				/*
@@ -50,8 +54,10 @@ get_header();
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+		if( is_home()) :
 		?>
-
+		</div>
+		<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
