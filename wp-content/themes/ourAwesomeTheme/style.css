@@ -832,6 +832,12 @@ a:hover, a:active {
 	max-width: 100%;
 }
 
+.widget-area {
+	float: right;
+	overflow: hidden;
+	width: 25%;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -982,4 +988,8 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+.contentBG {
+	background-color: #f1f1f1;
 }

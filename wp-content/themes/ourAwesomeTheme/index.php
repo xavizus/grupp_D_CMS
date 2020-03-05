@@ -15,23 +15,27 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main m-2">
+<div id="primary" class="content-area mt-5">
+	<main id="main" class="site-main contentBG container">
 
 		<?php
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) :
 				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
+		<header>
+			<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+		</header>
+		<?php
 			endif;
 			if (is_home()) :
 				?>
-				<div class="card-deck">
-				<?php
+		<div class="row">
+			<div class="col-9">
+				<div class="row">
+
+				
+			<?php
 			endif;
 
 			/* Start the Loop */
@@ -46,21 +50,38 @@ get_header();
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
-
-			the_posts_navigation();
+			$args = array(
+				'prev_text' => "Äldre fastigheter",
+				'next_text' => 'Nyare fastigheter'
+			);
 
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
-		if( is_home()) :
+		?>
+			</div>
+		</div>
+		<div class="col-3">
+
+
+	<?php
+		get_sidebar();
 		?>
 		</div>
-		<?php endif; ?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</div>
+		<?php
+		if( is_home()) :
+		?>
+		
+		<?php 
+	the_posts_navigation($args);
+	endif; ?>
+
+	</main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();

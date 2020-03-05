@@ -96,7 +96,7 @@ function ourawesometheme_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'ourawesometheme_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'ourawesometheme_content_width', 800 );
 }
 add_action( 'after_setup_theme', 'ourawesometheme_content_width', 0 );
 
@@ -115,17 +115,6 @@ function ourawesometheme_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
- 
-	register_sidebar( array(
-		'name'          => 'Custom Header Widget Area',
-		'id'            => 'bs-example-navbar-collapse-1',
-		'before_widget' => '<div class="chw-widget">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="chw-title">',
-		'after_title'   => '</h2>',
-	) );
-	 
-	
 }
 add_action( 'widgets_init', 'ourawesometheme_widgets_init' );
 
@@ -182,3 +171,5 @@ if ( ! file_exists( get_template_directory() . '/class-wp-bootstrap-navwalker.ph
 	// file exists... require it.
     require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
+
+add_filter('widget_text','do_shortcode');

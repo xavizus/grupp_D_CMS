@@ -61,13 +61,6 @@ if (!is_front_page()) :?>
 			),
 			get_the_title()
         ) );
-        
-   
-
-        echo "Rummet är " . $kvm . " kvm stort <br>";
-        echo "Fastigheten finns på adressen: $address <br>";
-        echo "Fastigheten har $noofrooms rum";
-
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'ourawesometheme' ),
 			'after'  => '</div>',
@@ -85,8 +78,8 @@ else:
 ?>
 
         <?php $featured_img_url=get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>
-        <div class="card">
-            <img class="card-img-top" src="<?php echo $featured_img_url ?>" alt="">
+        <div class="card col-6 py-2 my-1">
+            <img class="card-img-top mt-1" src="<?php echo $featured_img_url ?>" alt="">
             <div class="card-body">
 				<h4 class="card-title"><?php the_title(); ?></h4>
 				<hr>

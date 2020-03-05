@@ -25,7 +25,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div id="page" class="site container">
+	<div id="page" class="site container-fluid">
 		<a class="skip-link screen-reader-text"
 			href="#content"><?php esc_html_e( 'Skip to content', 'ourawesometheme' ); ?></a>
 
@@ -76,7 +76,6 @@
 			</div>
 			 
 			<?php endif; ?>
-			?>
 				</div>
 			</nav>
 		</header><!-- #masthead -->
