@@ -16,7 +16,7 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main m-2">
 
 		<?php
 		if ( have_posts() ) :
@@ -26,6 +26,11 @@ get_header();
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
+				<?php
+			endif;
+			if (is_home()) :
+				?>
+				<div class="card-deck">
 				<?php
 			endif;
 
@@ -49,8 +54,10 @@ get_header();
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+		if( is_home()) :
 		?>
-
+		</div>
+		<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

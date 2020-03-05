@@ -81,6 +81,8 @@ if ( ! function_exists( 'ourawesometheme_setup' ) ) :
 		) );
 	}
 endif;
+
+
 add_action( 'after_setup_theme', 'ourawesometheme_setup' );
 
 /**
