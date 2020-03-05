@@ -91,7 +91,8 @@ else:
                 <p class="card-text"><?=$noofrooms?></p>
                 <p class="card-text"><?=$kvm?></p>
                 <p class="card-text"><?=$initialbid?></p>
-                <a href="#" class="btn btn-success btn-block">View property</a>
+                <a href="<?= esc_url( get_permalink() ) ?>" class="btn btn-success btn-block">View property</a>
+               
             </div>
         </div>
         <?php
