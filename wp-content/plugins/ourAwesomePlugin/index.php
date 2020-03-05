@@ -21,6 +21,8 @@ function changeHomeDefaultPostType($query) {
 				'value' => '1',
             )
 		));
+		$query->set('posts_per_page', '5');
+		$query->set('post_status', 'publish');
 	}
 }
 
@@ -40,6 +42,8 @@ function custom_search_query( $query ) {
          $query->set('post_type', 'realestate'); // optional
 	};
 }
+
+
 
 add_filter( 'query_vars', 'add_queryvars');
 add_filter( 'pre_get_posts', 'changeHomeDefaultPostType');
