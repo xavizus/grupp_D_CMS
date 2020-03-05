@@ -59,7 +59,7 @@ function your_prefix_get_meta_box( $meta_boxes ) {
 		'autosave' => 'false',
 		'fields' => array(
 			array(
-				'id' => $prefix . 'address',
+				'id' => $prefix . 'adress',
 				'type' => 'text',
 				'name' => esc_html__( 'Adress', 'Real-Estate' ),
 				'desc' => esc_html__( 'Adress till objektet', 'Real-Estate' ),
