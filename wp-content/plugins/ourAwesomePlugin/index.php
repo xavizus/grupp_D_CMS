@@ -18,12 +18,8 @@ function your_prefix_get_meta_box( $meta_boxes ) {
 		'autosave' => 'false',
 		'fields' => array(
 			array(
-<<<<<<< HEAD
-				'id' => $prefix . 'adress',
-=======
 				'id' => $prefix . 'address',
 				"taxonomy" => "address",
->>>>>>> b92dba8b916678d0d10a4f87367617f0d86bebca
 				'type' => 'text',
 				'name' => esc_html__( 'Adress', 'Real-Estate' ),
 				'desc' => esc_html__( 'Adress till objektet', 'Real-Estate' ),
