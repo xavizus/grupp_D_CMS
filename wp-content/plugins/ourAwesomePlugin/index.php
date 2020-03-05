@@ -112,10 +112,6 @@ function changeHomeDefaultPostType($query) {
  
 function custom_search_query( $query ) {
     if ( !is_admin() && $query->is_search() && isset($query->query_vars['noOfRooms'])) {
-
-		if(!isset($query->query_vars['s'])) {
-			
-		}
         $query->set('meta_query', array(
             array(
                 'key' => 'noofrooms',
