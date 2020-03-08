@@ -13,5 +13,8 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 <h2>Sidebar</h2>
 <aside id="secondary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	<?php dynamic_sidebar( 'sidebar-1' ); 
+		get_search_form();
+	?>
+	
 </aside><!-- #secondary -->

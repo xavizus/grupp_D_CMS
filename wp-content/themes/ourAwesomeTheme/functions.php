@@ -173,3 +173,21 @@ if ( ! file_exists( get_template_directory() . '/class-wp-bootstrap-navwalker.ph
 }
 
 add_filter('widget_text','do_shortcode');
+
+function search_filter_for_name( $query ) {
+    if ( ! is_admin() && $query->is_main_query() && isset( $_POST['name_search'] ) && 1 == $_POST['name_search'] ) {
+        if ( $query->is_search ) {
+            // set search string to false, otherwise the search searches in the_content() for this phrase and I want a specific field only
+            $query->set( 's', false );
+            // set your desired post type(s)
+            $query->set( 'post_type', array( 'your_post_type' ) );
+
+            // set the meta query for your specific field
+            $query->set( 'meta_query', array(
+                'key'       => 'field_name',
+                'value'     => $query->query['s']
+            ) );
+        }
+    }
+}
+add_action( 'pre_get_posts', 'search_filter_for_name' );

@@ -17,10 +17,12 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="<?= get_stylesheet_directory_uri();?>/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?= get_stylesheet_directory_uri();?>/css/jquery-ui.min.css">
 	<script src="<?= get_stylesheet_directory_uri();?>/js/jquery.js"></script>
 	<script src="<?= get_stylesheet_directory_uri();?>/js/bootstrap.min.js"></script>
+	<script src="<?= get_stylesheet_directory_uri();?>/js/jquery-ui.min.js"></script>
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+	<script src="<?= get_stylesheet_directory_uri();?>/js/main.js"></script>
 	<?php wp_head(); ?>
 </head>
 
