@@ -61,10 +61,11 @@ get_header();
 
 		endif;
 		?>
+	
 			</div>
+			<?php wpbeginner_numeric_posts_nav(); ?>
 		</div>
 		<div class="col-3">
-
 
 	<?php
 		get_sidebar();
