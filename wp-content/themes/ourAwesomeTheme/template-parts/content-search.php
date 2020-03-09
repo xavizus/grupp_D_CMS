@@ -1,35 +1,42 @@
 <?php
 /**
- * Template part for displaying results in search pages
+ * Template part for displaying posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package ourAwesomeTheme
  */
 
-?>
+$metaData = array(
+    "address",
+    "zipcode",
+    "city",
+    "showdate",
+    "noofrooms",
+    "kvm",
+    "initialbid",
+    "selecteditems"
+);
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+foreach ($metaData as $data) { 
+    $key = $data;
+    $$key = get_post_meta(get_the_ID(), $data,true);
+}
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			ourawesometheme_posted_on();
-			ourawesometheme_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php ourawesometheme_post_thumbnail(); ?>
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php ourawesometheme_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+        $featured_img_url=get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>
+        <div class="card col-6 py-2 my-1">
+            <img class="card-img-top mt-1" src="<?php echo $featured_img_url ?>" alt="">
+            <div class="card-body">
+				<h4 class="card-title"><?php the_title(); ?></h4>
+				<hr>
+               
+                <p class="card-text"> Adress: <?=$address?></p>
+                <p class="card-text"> Postnr: <?=$zipcode?> <?=$city?></p>
+                <p class="card-text"> Visningsdatum: <?=$showdate?></p>
+                <p class="card-text"> Antal rum: <?=$noofrooms?> rum</p>
+                <p class="card-text"> Storlek: <?=$kvm?> kvm</p>
+                <p class="card-text"> Utgångspris: <?=$initialbid?> SEK</p>
+                <a href="<?= esc_url( get_permalink() ) ?>" class="btn btn-success btn-block">Visa bostaden</a>
+               
+            </div>
+</div>
