@@ -38,10 +38,14 @@ $(async function () {
       values: [Number(metadata.min), Number(metadata.max)],
       slide: function (event, ui) {
         $(`#${metadata.metakey}`).val(ui.values[0] + ` ${metadata.metalabel} - ` + ui.values[1] + ` ${metadata.metalabel}`);
+        $(`#min${metadata.metakey}`).val(ui.values[0]);
+        $(`#max${metadata.metakey}`).val(ui.values[1]);
       }
     });
     $(`#${metadata.metakey}`).val($(`#${metadata.metakey}-range`).slider("values", 0) +
       ` ${metadata.metalabel} - ` + $(`#${metadata.metakey}-range`).slider("values", 1) + ` ${metadata.metalabel}`);
+      $(`#min${metadata.metakey}`).val($(`#${metadata.metakey}-range`).slider("values", 0));
+      $(`#max${metadata.metakey}`).val($(`#${metadata.metakey}-range`).slider("values", 1));
   });
 
 });

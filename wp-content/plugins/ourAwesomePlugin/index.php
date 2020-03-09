@@ -90,7 +90,7 @@ function autocomplete() {
 	$term = "%" . $term . "%";
 	//return $term;
 	$query = $wpdb->prepare(
-		"SELECT terms.name
+		"SELECT terms.name, terms.slug
 		FROM {$wpdb->terms} as terms
 		LEFT JOIN {$wpdb->term_taxonomy} as termtax
 		ON termtax.taxonomy='properties' AND terms.term_id=termtax.term_id
@@ -100,7 +100,10 @@ function autocomplete() {
 	$results = $wpdb->get_results($query);
 
 	foreach($results as $row) {
-		$suggestions[] = $row->name;
+		$suggestions[] = array(
+			"label" => $row->name,
+			"value" => $row->slug
+		);
 	}
 	
 
@@ -109,16 +112,55 @@ function autocomplete() {
 }
 
 function custom_search_query( $query ) {
-    if ( !is_admin() && $query->is_search() && isset($query->query_vars['noOfRooms'])) {
-		print_r($query);
-        $query->set('meta_query', array(
+    if ( !is_admin() && $query->is_search() && isset($_REQUEST['customSearch'])) {
+		$metaQuery = array(
+			'relation' => 'AND',
             array(
                 'key' => 'noofrooms',
-				'value' => $query->query_vars['noOfRooms'],
-				'type' => 'numeric'
-            )
-		));
-         $query->set('post_type', 'realestate'); // optional
+				'value' => array(sanitize_text_field($_REQUEST['minnoofrooms']), sanitize_text_field($_REQUEST['maxnoofrooms'])),
+				'type' => 'numeric',
+				'compare' => 'BETWEEN'
+			),
+			array(
+                'key' => 'kvm',
+				'value' => array(sanitize_text_field($_REQUEST['minkvm']), sanitize_text_field($_REQUEST['maxkvm'])),
+				'type' => 'numeric',
+				'compare' => 'BETWEEN'
+			),
+			array(
+                'key' => 'initialbid',
+				'value' => array(sanitize_text_field($_REQUEST['mininitialbid']), sanitize_text_field($_REQUEST['maxinitialbid'])),
+				'type' => 'numeric',
+				'compare' => 'BETWEEN'
+			)
+		);
+
+		
+		if(!empty($_REQUEST['search-properties'])) {
+			$tax_query = array (
+				array(
+					'taxonomy' => 'properties',
+					'field' => 'term',
+					'terms' => 'nara-till-skolan',
+				)
+			);
+
+			$query->set('tax_query', $tax_query);
+		}
+
+		if(!empty($_REQUEST['s'])) {
+			$metaQuery[] = array(
+				array(
+					'key' => 'city',
+					'value' => sanitize_text_field($_REQUEST['s']),
+					'compare'   => 'LIKE',
+				)
+			);
+		}
+		$query->set('s','');
+        $query->set('meta_query', $metaQuery);
+		$query->set('post_type', 'realestate');
+		
 	};
 }
 
