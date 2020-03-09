@@ -61,7 +61,7 @@
 						aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-					<a class="navbar-brand" href="#">Navbar</a>
+					<a class="navbar-brand" href="<?php echo home_url(); ?>">Real Estate Sweden</a>
 					<?php
         wp_nav_menu( array(
             'theme_location'    => 'ourawesomemenu',

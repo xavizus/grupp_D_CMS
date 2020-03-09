@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main contentBG container">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -22,6 +22,9 @@ get_header();
 				?>
 			</header><!-- .page-header -->
 
+			<div class="row">
+			<div class="col-12">
+				<div class="row">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -44,7 +47,10 @@ get_header();
 
 		endif;
 		?>
-
+		</div>
+		</div>
+		</div>
+		
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
