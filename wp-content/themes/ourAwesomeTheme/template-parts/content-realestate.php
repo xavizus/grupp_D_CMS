@@ -84,13 +84,13 @@ else:
 				<h4 class="card-title"><?php the_title(); ?></h4>
 				<hr>
                
-                <p class="card-text"><?=$address?></p>
-                <p class="card-text"><?=$zipcode?> <?=$city?></p>
-                <p class="card-text"><?=$showdate?></p>
-                <p class="card-text"><?=$noofrooms?> rum</p>
-                <p class="card-text"><?=$kvm?> kvm</p>
-                <p class="card-text"><?=$initialbid?> SEK</p>
-                <a href="<?= esc_url( get_permalink() ) ?>" class="btn btn-success btn-block">View property</a>
+                <p class="card-text"> Adress: <?=$address?></p>
+                <p class="card-text"> Postnr: <?=$zipcode?> <?=$city?></p>
+                <p class="card-text"> Visningsdatum: <?=$showdate?></p>
+                <p class="card-text"> Antal rum: <?=$noofrooms?> rum</p>
+                <p class="card-text"> Storlek: <?=$kvm?> kvm</p>
+                <p class="card-text"> Utgångspris: <?=$initialbid?> SEK</p>
+                <a href="<?= esc_url( get_permalink() ) ?>" class="btn btn-success btn-block">Visa bostaden</a>
                
             </div>
         </div>
