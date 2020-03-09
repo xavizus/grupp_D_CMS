@@ -165,8 +165,14 @@ function custom_search_query( $query ) {
 }
 
 function custom_property_query($query) {
-	if ( !is_admin() && $query->is_search() && !empty($_GET['propertytype'])) {
-		print_r($query);
+	if ( !is_admin() && is_tax('propertytype') && $query->is_main_query()) {
+		$query->set( 'orderby', 'meta_value' );
+		$query->set('meta_query', array(
+			'meta_value' => array (
+				'key' => 'selecteditem',
+				'type' => 'NUMERIC'
+			)
+		));
 	}
 }
 
@@ -181,9 +187,8 @@ add_action( 'rest_api_init', function () {
 		'callback' => 'autocomplete',
 	  ) );
   } );
-
 add_filter( 'query_vars', 'add_queryvars');
 add_filter( 'pre_get_posts', 'changeHomeDefaultPostType');
 add_filter( 'pre_get_posts', 'custom_search_query');
- 
+add_filter( 'pre_get_posts', 'custom_property_query');
 ?>
