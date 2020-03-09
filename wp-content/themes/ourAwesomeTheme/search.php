@@ -61,9 +61,9 @@ get_header();
 				?>
 			</div>
 		</div>
+		<div class="row">
+		<?php get_footer(); ?>
+	</div>
 
 	</main><!-- #main -->
 </section><!-- #primary -->
-
-<?php
-get_footer();

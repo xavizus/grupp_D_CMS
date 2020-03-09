@@ -12,9 +12,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) && !is_home()) {
 ?>
 <aside id="secondary">
 	<?php dynamic_sidebar( 'sidebar-1' ); 
-		if(is_home()) {
-			get_search_form();
-		}
 	?>
 	
 </aside><!-- #secondary -->
