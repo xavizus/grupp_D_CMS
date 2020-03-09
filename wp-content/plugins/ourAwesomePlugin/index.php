@@ -187,6 +187,7 @@ add_action( 'rest_api_init', function () {
 		'callback' => 'autocomplete',
 	  ) );
   } );
+  
 add_filter( 'query_vars', 'add_queryvars');
 add_filter( 'pre_get_posts', 'changeHomeDefaultPostType');
 add_filter( 'pre_get_posts', 'custom_search_query');

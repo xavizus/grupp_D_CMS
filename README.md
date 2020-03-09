@@ -13,10 +13,10 @@ Bygga en mäklarsite i WP.
 - [x] En editor ska kunna lägga till, redigera och publicera/avpublicera egna och andras objekt.
 - [x] Administratörer ska kunna ta bort objekt.
 - [x] På förstasidan ska ett visst antal utvalda objekt visas på ett säljande och tillgängligt sätt.
-- [ ] I menyn ska det finnas möjlighet att välja olika kategorier, t ex bostadsrätt. Länken ska gå till en sida som presenterar ett utvalt objekt överst och sedan listar övriga objekt.
+- [x] I menyn ska det finnas möjlighet att välja olika kategorier, t ex bostadsrätt. Länken ska gå till en sida som presenterar ett utvalt objekt överst och sedan listar övriga objekt.
 - [x] Både förstasidan och kategorisidorna ska paginera resultatet och visa max fem objekt i taget.
 - [x] Det måste finnas tillräckligt många objekt för att visa att ni har löst pagineringsuppgiften.
-- [ ] På förstasidan ska det finnas en sökfunktion och användaren ska kunna söka efter ort, etiketter (typ "nära naturen"), antal rum (max/min) och pris (max/min).
+- [x] På förstasidan ska det finnas en sökfunktion och användaren ska kunna söka efter ort, etiketter (typ "nära naturen"), antal rum (max/min) och pris (max/min).
 - [x] Det ska finnas en Om oss-sida som berättar lite om företaget.
   - [x] Sidan ska inkludera ett kontaktformulär. Kontaktformuläret ska spara alla inskick i en databas.
 
