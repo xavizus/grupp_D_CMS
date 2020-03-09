@@ -188,6 +188,17 @@ add_action( 'rest_api_init', function () {
 	  ) );
   } );
   
+  function my_theme_archive_title( $title ) {
+    if ( is_post_type_archive() ) {
+        $title = post_type_archive_title( '', false );
+    } elseif ( is_tax() ) {
+        $title = single_term_title( '', false );
+    }
+  
+    return $title;
+}
+ 
+add_filter( 'get_the_archive_title', 'my_theme_archive_title' );
 add_filter( 'query_vars', 'add_queryvars');
 add_filter( 'pre_get_posts', 'changeHomeDefaultPostType');
 add_filter( 'pre_get_posts', 'custom_search_query');
