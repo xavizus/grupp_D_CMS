@@ -13,7 +13,7 @@ get_header();
 <div id="primary" class="content-area container mt-5">
 <main id="main" class="site-main contentBG container">
 	<div class="row">
-		<?php $size = is_active_sidebar( 'sidebar-1' )? "col-sm-9" : "col-sm-12"; ?>
+		<?php $size = is_active_sidebar( 'sidebar-1' && get_post_type() != "realestate")? "col-sm-9" : "col-sm-12"; ?>
 		<div class="<?=$size?>">
 			
 
@@ -23,9 +23,11 @@ get_header();
 	
 				get_template_part( 'template-parts/content', get_post_type() ); ?>
 		</div>
+		<?php if(get_post_type() != "realestate"): ?>
 		<div class="col-sm-3">
 			<?php get_sidebar(); ?>
 		</div>
+		<?php endif; ?>
 
 
 
