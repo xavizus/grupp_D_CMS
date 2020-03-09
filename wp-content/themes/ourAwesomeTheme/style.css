@@ -1027,6 +1027,9 @@ object {
  .about{
 	 margin: auto;
 	 width: 50%;
-
 	 padding: 2px;
+ }
+
+ .page .entry-header{
+	 text-align: center;
  }
