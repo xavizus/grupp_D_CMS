@@ -18,6 +18,7 @@ wp-content/plugins/*
 !wp-content/plugins/advanced-custom-fields
 !wp-content/plugins/search-filter
 !wp-content/plugins/ourAwesomePlugin
+!wp-content/plugins/wpforms-lite
 
 
 # ignore specific themes
