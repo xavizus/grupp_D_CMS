@@ -164,6 +164,12 @@ function custom_search_query( $query ) {
 	};
 }
 
+function custom_property_query($query) {
+	if ( !is_admin() && $query->is_search() && !empty($_GET['propertytype'])) {
+		print_r($query);
+	}
+}
+
 add_action( 'rest_api_init', function () {
 	register_rest_route( 'ourAwesomePlugin/v1', '/metakeyMinMax/(?P<metakey>[a-zA-Z]+)', array(
 	  'methods' => 'GET',
