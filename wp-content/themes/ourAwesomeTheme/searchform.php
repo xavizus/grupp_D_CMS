@@ -39,7 +39,7 @@
             <br>
             <input type="search" name="s" placeholder="Sök efter ort" />
             <br><br>
-            <button type="submit" class="button button--submit">Submit</button>
+            <button type="submit" class="button btn btn-success btn-block button--submit">Sök</button>
         </div>
 
     </fieldset>
