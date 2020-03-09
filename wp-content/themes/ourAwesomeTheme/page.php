@@ -20,7 +20,8 @@ get_header();
 	<main id="main" class="site-main contentBG container about">
 		<div class="row">
 			<?php
-			$size = is_active_sidebar('sidebar-1') ? "col-9" : "col-12";
+			global $post;
+			$size = (is_active_sidebar('sidebar-1') && $post->ID != 14) ? "col-9" : "col-12";
 			?>
 			<div class="<?= $size ?>">
 				<div class="row <?= $size ?> m-1">
@@ -39,9 +40,11 @@ get_header();
 					?>
 				</div>
 			</div>
+			<?php if($post->ID != 14): ?>
 			<div class="col-3">
 				<?php get_sidebar(); ?>
 			</div>
+			<?php endif; ?>
 		</div>
 		<div class="row">
 			<?php get_footer(); ?>

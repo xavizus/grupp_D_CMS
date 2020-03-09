@@ -22,7 +22,8 @@ get_header();
 			</header><!-- .page-header -->
 
 			<div class="row">
-			<div class="col-12">
+			<?php $size = is_active_sidebar( 'sidebar-1' )? "col-sm-9" : "col-sm-12"; ?>
+			<div class="<?=$size?>">
 				<div class="row">
 			<?php
 			/* Start the Loop */
@@ -48,11 +49,15 @@ get_header();
 		?>
 		</div>
 		</div>
+		<div class="col-sm-3">
+			<?php get_sidebar(); ?>
 		</div>
-		
+		</div>
+		<div class="row">
+		<?php get_footer(); ?>
+	</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
 get_sidebar();
-get_footer();
