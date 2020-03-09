@@ -28,15 +28,13 @@ get_header();
 		</header>
 		<?php
 			endif;
-			if (is_home()) :
-				?>
+		?>
 		<div class="row">
 			<div class="col-9">
 				<div class="row">
 
 				
 			<?php
-			endif;
 
 			/* Start the Loop */
 			while ( have_posts() ) :
