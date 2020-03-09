@@ -1023,3 +1023,10 @@ object {
  .navigation li.active a {
 	 background-color: #3C8DC5;
  }
+
+ .about{
+	 margin: auto;
+	 width: 50%;
+
+	 padding: 2px;
+ }

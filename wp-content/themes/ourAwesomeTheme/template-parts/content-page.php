@@ -16,7 +16,7 @@
 
 	<?php ourawesometheme_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<div class="entry-content about">
 		<?php
 		the_content();
 
