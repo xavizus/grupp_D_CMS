@@ -37,8 +37,8 @@ if (!is_front_page()) :?>
             ?>
             <div class="entry-meta">
                 <?php
-                    ourawesometheme_posted_on();
-                    ourawesometheme_posted_by();
+                    //ourawesometheme_posted_on();
+                   // ourawesometheme_posted_by();
                     ?>
             </div><!-- .entry-meta -->
         </header><!-- .entry-header -->

@@ -69,6 +69,9 @@ h1,h2,h4,h3,h4{
 p{
 	font-family: 'Oswald', sans-serif;
 }
+.navbar-brand{
+	font-family: 'Oswald', sans-serif;
+}
 
 /* Sections
 	 ========================================================================== */
@@ -1067,4 +1070,12 @@ object {
 .item {
     position:relative;
 	display:inline-block;
+}
+
+.container-fluid{
+	width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+	padding-left: 0px;
+	padding-right: 0px;
 }
