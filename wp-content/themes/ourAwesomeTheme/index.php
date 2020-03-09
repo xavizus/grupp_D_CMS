@@ -77,7 +77,6 @@ get_header();
 		?>
 		
 		<?php 
-	the_posts_navigation($args);
 	endif; ?>
 
 	</main><!-- #main -->
