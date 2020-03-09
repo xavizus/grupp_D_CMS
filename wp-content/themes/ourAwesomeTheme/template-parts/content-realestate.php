@@ -18,7 +18,7 @@ $metaData = array(
     "selecteditems"
 );
 
-foreach ($metaData as $data) {
+foreach ($metaData as $data) { 
     $key = $data;
     $$key = get_post_meta(get_the_ID(), $data,true);
 }
@@ -85,12 +85,11 @@ else:
 				<hr>
                
                 <p class="card-text"><?=$address?></p>
-                <p class="card-text"><?=$zipcode?></p>
-                <p class="card-text"><?=$city?></p>
+                <p class="card-text"><?=$zipcode?> <?=$city?></p>
                 <p class="card-text"><?=$showdate?></p>
-                <p class="card-text"><?=$noofrooms?></p>
-                <p class="card-text"><?=$kvm?></p>
-                <p class="card-text"><?=$initialbid?></p>
+                <p class="card-text"><?=$noofrooms?> rum</p>
+                <p class="card-text"><?=$kvm?> kvm</p>
+                <p class="card-text"><?=$initialbid?> SEK</p>
                 <a href="<?= esc_url( get_permalink() ) ?>" class="btn btn-success btn-block">View property</a>
                
             </div>
