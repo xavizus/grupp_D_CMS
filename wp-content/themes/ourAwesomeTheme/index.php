@@ -57,7 +57,9 @@ get_header();
 		?>
 
 				</div>
-				<?php wpbeginner_numeric_posts_nav(); ?>
+				<div class="row m-2 justify-content-center">
+		<?php wpbeginner_numeric_posts_nav(); ?>
+		</div>
 			</div>
 			<div class="col-3">
 
@@ -65,8 +67,9 @@ get_header();
 					get_sidebar();
 				?>
 			</div>
+			
 		</div>
-
+		
 	</main><!-- #main -->
 </div><!-- #primary -->
 

@@ -10,11 +10,12 @@
 get_header();
 ?>
 
-<div id="primary" class="content-area container">
+<div id="primary" class="content-area container mt-5">
+<main id="main" class="site-main contentBG container">
 	<div class="row">
 		<?php $size = is_active_sidebar( 'sidebar-1' )? "col-sm-9" : "col-sm-12"; ?>
 		<div class="<?=$size?>">
-			<main id="main" class="site-main">
+			
 
 				<?php while ( have_posts() ) :
 				the_post();
