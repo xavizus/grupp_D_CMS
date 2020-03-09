@@ -15,7 +15,7 @@ $metaData = array(
     "noofrooms",
     "kvm",
     "initialbid",
-    "selecteditems"
+    "selecteditem"
 );
 
 foreach ($metaData as $data) { 
@@ -25,7 +25,13 @@ foreach ($metaData as $data) {
 
         $featured_img_url=get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>
         <div class="card col-6 py-2 my-1">
-            <img class="card-img-top mt-1" src="<?php echo $featured_img_url ?>" alt="">
+        <div class="item">
+                <img class="card-img-top mt-1" src="<?php echo $featured_img_url ?>" alt="">
+                <?php if($selecteditem): ?>
+                <span class="notify-badge">Utvalda fastigheter!</span>
+
+                <?php endif; ?>
+            </div>
             <div class="card-body">
 				<h4 class="card-title"><?php the_title(); ?></h4>
 				<hr>
