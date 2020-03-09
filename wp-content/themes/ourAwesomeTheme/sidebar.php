@@ -6,15 +6,15 @@
  *
  * @package ourAwesomeTheme
  */
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'sidebar-1' ) && !is_home()) {
 	return;
 }
-
 ?>
-<h2>Sidebar</h2>
 <aside id="secondary">
 	<?php dynamic_sidebar( 'sidebar-1' ); 
-		get_search_form();
+		if(is_home()) {
+			get_search_form();
+		}
 	?>
 	
 </aside><!-- #secondary -->

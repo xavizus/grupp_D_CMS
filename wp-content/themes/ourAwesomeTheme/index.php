@@ -33,8 +33,8 @@ get_header();
 			<div class="col-9">
 				<div class="row">
 
-				
-			<?php
+
+					<?php
 
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -55,23 +55,17 @@ get_header();
 
 		endif;
 		?>
-	
-			</div>
-			<?php wpbeginner_numeric_posts_nav(); ?>
-		</div>
-		<div class="col-3">
 
-	<?php
-		get_sidebar();
-		?>
+				</div>
+				<?php wpbeginner_numeric_posts_nav(); ?>
+			</div>
+			<div class="col-3">
+
+				<?php
+					get_sidebar();
+				?>
+			</div>
 		</div>
-		</div>
-		<?php
-		if( is_home()) :
-		?>
-		
-		<?php 
-	endif; ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->
