@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Test plugin
-Description: A test plugin to demonstrate wordpress functionality
-Author: Stephanus Pungros
+Plugin Name: ourAwesomePlugin
+Description: A Real estate plugin
+Author: 
 Version: 0.1
 */
 
