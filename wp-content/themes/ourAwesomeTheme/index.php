@@ -30,7 +30,8 @@ get_header();
 			endif;
 		?>
 		<div class="row">
-			<div class="col-9">
+		<?php $size = is_active_sidebar( 'sidebar-1' )? "col-sm-9" : "col-sm-12"; ?>
+			<div class="<?=$size?>">
 				<div class="row">
 
 
@@ -62,7 +63,6 @@ get_header();
 		</div>
 			</div>
 			<div class="col-3">
-
 				<?php
 					get_sidebar();
 				?>
