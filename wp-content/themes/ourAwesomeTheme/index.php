@@ -50,10 +50,6 @@ get_header();
 				get_template_part( 'template-parts/content', get_post_type() );
 
 			endwhile;
-			$args = array(
-				'prev_text' => "Äldre fastigheter",
-				'next_text' => 'Nyare fastigheter'
-			);
 
 		else :
 

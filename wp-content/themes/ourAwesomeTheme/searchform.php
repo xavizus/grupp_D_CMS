@@ -1,4 +1,5 @@
 <form class="form form--search" action="" method="post">
+    <input type="hidden" name="customSearch" value="1" />
     <fieldset>
         <div>
             <div data-role="rangeslider">
@@ -29,8 +30,6 @@
             </div>
             <br>
             <input id="search-properties" type="search" placeholder="Egenskaper" name="s">
-            <br>
-            <input type="hidden" name="customSearch" value="1" />
             <br>
             <input type="search" name="s" class="search__input" placeholder="Sök efter ort" />
             <br><br>
