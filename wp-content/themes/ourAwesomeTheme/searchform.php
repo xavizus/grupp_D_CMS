@@ -3,6 +3,7 @@
     <fieldset>
         <div>
             <div data-role="rangeslider">
+                <input type="hidden" id="values" data-min="50" data-max="55" />
                 <p>
                     <label for="noofrooms">Antal rum:</label><br>
                     <input type="text" id="noofrooms" readonly style="border:0; color:#f6931f; font-weight:bold;">

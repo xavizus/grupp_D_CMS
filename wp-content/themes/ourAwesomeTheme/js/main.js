@@ -47,6 +47,7 @@ $(async function () {
 });
 
 
+
 $(function () {
   let url = apiUrl + "autocomplete";
   $("#search-properties").autocomplete({

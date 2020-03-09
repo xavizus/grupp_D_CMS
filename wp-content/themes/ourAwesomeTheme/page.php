@@ -15,12 +15,15 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area mt-5">
-		<main id="main" class="site-main contentBG container">
+<div id="primary" class="content-area mt-5">
+	<main id="main" class="site-main contentBG container about">
 		<div class="row">
-			<div class="col-9">
+		<?php 
+		$size = is_active_sidebar( 'sidebar-1' )? "col-9" : "col-12";
+		?>
+			<div class="<?=$size?>">
 				<div class="row">
-		<?php
+					<?php
 		while ( have_posts() ) :
 			the_post();
 
@@ -33,14 +36,14 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
+				</div>
+			</div>
+			<div class="col-3">
+				<?php get_sidebar(); ?>
 			</div>
 		</div>
-		<div class="col-3">
-			<?php get_sidebar(); ?>
+		<div class="row">
+			<?php get_footer();?>
 		</div>
-		</div>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_footer();
+	</main><!-- #main -->
+</div><!-- #primary -->

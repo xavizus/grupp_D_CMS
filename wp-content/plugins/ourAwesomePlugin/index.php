@@ -26,23 +26,6 @@ function changeHomeDefaultPostType($query) {
 	}
 }
 
-/*
- * Extend wp search to include custom post meta 
- */
- 
-function custom_search_query( $query ) {
-    if ( !is_admin() && $query->is_search() && isset($query->query_vars['noOfRooms'])) {
-        $query->set('meta_query', array(
-            array(
-                'key' => 'noofrooms',
-				'value' => $query->query_vars['noOfRooms'],
-				'type' => 'numeric'
-            )
-		));
-         $query->set('post_type', 'realestate'); // optional
-	};
-}
-
 function max_min_meta_value($request){
 	$allowed_metakeys = array(
 		"noofrooms",
@@ -123,6 +106,20 @@ function autocomplete() {
 
 	return $suggestions;
 	
+}
+
+function custom_search_query( $query ) {
+    if ( !is_admin() && $query->is_search() && isset($query->query_vars['noOfRooms'])) {
+		print_r($query);
+        $query->set('meta_query', array(
+            array(
+                'key' => 'noofrooms',
+				'value' => $query->query_vars['noOfRooms'],
+				'type' => 'numeric'
+            )
+		));
+         $query->set('post_type', 'realestate'); // optional
+	};
 }
 
 add_action( 'rest_api_init', function () {
