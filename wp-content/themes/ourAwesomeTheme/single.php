@@ -44,8 +44,12 @@ get_header();
 	</div>
 
 	<div class="row">
-	<?php
-			the_post_navigation();
+	
+		<div class="col-sm-12">
+		<?php the_post_navigation(); ?>
+		</div>
+		<?php
+			
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
