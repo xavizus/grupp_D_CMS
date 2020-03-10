@@ -17,6 +17,7 @@ wp-content/plugins/*
 !wp-content/plugins/ourAwesomePlugin
 !wp-content/plugins/hide-featured-image
 !wp-content/plugins/everest-forms
+!wp-content/plugins/ml-slider
 
 
 # ignore specific themes

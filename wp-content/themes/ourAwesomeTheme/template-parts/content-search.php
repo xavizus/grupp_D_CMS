@@ -28,7 +28,7 @@ foreach ($metaData as $data) {
         <div class="item">
                 <img class="card-img-top mt-1" src="<?php echo $featured_img_url ?>" alt="">
                 <?php if($selecteditem): ?>
-                <span class="notify-badge">Utvalda fastigheter!</span>
+                <span class="notify-badge">Utvald fastighet!</span>
 
                 <?php endif; ?>
             </div>
